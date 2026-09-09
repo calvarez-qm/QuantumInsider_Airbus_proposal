@@ -1,0 +1,11 @@
+# Local Python environment
+.venv/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Operating-system files
+.DS_Store
+Thumbs.db

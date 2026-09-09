@@ -1,0 +1,167 @@
+{
+  "scope": "Classical validation of Carleman linearization followed by Schrodingerization on two ODEs with analytical solutions.",
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.2.6",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.3"
+  },
+  "scalar_quadratic_check": {
+    "equation": "x' = -x + 0.2 x^2",
+    "analytical_solution": "x0 exp(-t) / (1 - 0.2 x0 (1 - exp(-t)))",
+    "initial_value": 0.4,
+    "final_time": 1.0,
+    "auxiliary_points": 512,
+    "auxiliary_half_width": 8.0,
+    "orders": [
+      {
+        "order": 1,
+        "lifted_dimension": 1,
+        "exact_value": 0.15498954256950645,
+        "carleman_value": 0.14715177646857694,
+        "schrodingerized_value": 0.14715177646857683,
+        "carleman_absolute_error": 0.00783776610092951,
+        "schrodingerization_absolute_error": 1.1102230246251565e-16,
+        "end_to_end_absolute_error": 0.007837766100929622,
+        "recovery_coordinate": 0.03125,
+        "accepted_region_probability": 0.05185805673538808,
+        "relative_norm_drift": 3.4906239727857844e-16
+      },
+      {
+        "order": 2,
+        "lifted_dimension": 2,
+        "exact_value": 0.15498954256950645,
+        "carleman_value": 0.15459318952249151,
+        "schrodingerized_value": 0.15459326078087648,
+        "carleman_absolute_error": 0.0003963530470149357,
+        "schrodingerization_absolute_error": 7.125838497046288e-08,
+        "end_to_end_absolute_error": 0.0003962817886299652,
+        "recovery_coordinate": 0.03125,
+        "accepted_region_probability": 0.05030914706860027,
+        "relative_norm_drift": 1.6204814976884512e-16
+      },
+      {
+        "order": 3,
+        "lifted_dimension": 3,
+        "exact_value": 0.15498954256950645,
+        "carleman_value": 0.15496949913674066,
+        "schrodingerized_value": 0.15496957058827474,
+        "carleman_absolute_error": 2.004343276579279e-05,
+        "schrodingerization_absolute_error": 7.145153407828175e-08,
+        "end_to_end_absolute_error": 1.997198123171451e-05,
+        "recovery_coordinate": 0.03125,
+        "accepted_region_probability": 0.049680019284175085,
+        "relative_norm_drift": 9.617345681153964e-16
+      },
+      {
+        "order": 4,
+        "lifted_dimension": 4,
+        "exact_value": 0.15498954256950645,
+        "carleman_value": 0.15498852898023283,
+        "schrodingerized_value": 0.154988600565506,
+        "carleman_absolute_error": 1.0135892736240493e-06,
+        "schrodingerization_absolute_error": 7.158527318140706e-08,
+        "end_to_end_absolute_error": 9.420040004426422e-07,
+        "recovery_coordinate": 0.03125,
+        "accepted_region_probability": 0.04954401172433128,
+        "relative_norm_drift": 1.9201551289041757e-15
+      },
+      {
+        "order": 5,
+        "lifted_dimension": 5,
+        "exact_value": 0.15498954256950645,
+        "carleman_value": 0.15498949131265707,
+        "schrodingerized_value": 0.15498956290202534,
+        "carleman_absolute_error": 5.125684937601349e-08,
+        "schrodingerization_absolute_error": 7.158936826678897e-08,
+        "end_to_end_absolute_error": 2.0332518890775475e-08,
+        "recovery_coordinate": 0.03125,
+        "accepted_region_probability": 0.04951937568642393,
+        "relative_norm_drift": 2.0795953486763235e-15
+      },
+      {
+        "order": 6,
+        "lifted_dimension": 6,
+        "exact_value": 0.15498954256950645,
+        "carleman_value": 0.1549895399774658,
+        "schrodingerized_value": 0.15498961156651353,
+        "carleman_absolute_error": 2.5920406376833682e-09,
+        "schrodingerization_absolute_error": 7.158904771764618e-08,
+        "end_to_end_absolute_error": 6.899700707996281e-08,
+        "recovery_coordinate": 0.03125,
+        "accepted_region_probability": 0.049515221378737914,
+        "relative_norm_drift": 3.5191602081213295e-15
+      }
+    ]
+  },
+  "vector_quadratic_check": {
+    "equation": {
+      "x": "x' = -x",
+      "y": "y' = -2 y + 0.5 x^2",
+      "z": "z' = -3 z + 0.75 x y"
+    },
+    "analytical_solution": {
+      "x": "x0 exp(-t)",
+      "y": "exp(-2t) (y0 + 0.5 x0^2 t)",
+      "z": "exp(-3t) (z0 + 0.75 x0 y0 t + 0.1875 x0^3 t^2)"
+    },
+    "initial_state": [
+      0.8,
+      0.3,
+      0.1
+    ],
+    "final_time": 1.0,
+    "state_dimension": 3,
+    "nonzero_quadratic_tensor_entries": 3,
+    "initial_quadratic_rhs_norm": 0.3671511950137164,
+    "exact_final_state": [
+      0.2943035529371539,
+      0.08390787560669989,
+      0.018719937706316848
+    ],
+    "carleman_orders": [
+      {
+        "order": 1,
+        "lifted_dimension": 3,
+        "maximum_relative_state_error": 0.14821783165525737,
+        "final_relative_state_error": 0.14818838623771408
+      },
+      {
+        "order": 2,
+        "lifted_dimension": 12,
+        "maximum_relative_state_error": 0.015588741034410571,
+        "final_relative_state_error": 0.015588741034410571
+      },
+      {
+        "order": 3,
+        "lifted_dimension": 39,
+        "maximum_relative_state_error": 6.841740957392373e-16,
+        "final_relative_state_error": 2.0273840376929283e-16
+      }
+    ],
+    "schrodingerization": {
+      "carleman_order": 3,
+      "lifted_dimension": 39,
+      "auxiliary_points": 1024,
+      "auxiliary_half_width": 12.0,
+      "enlarged_dimension": 39936,
+      "profile": "C1 cubic extension of exp(-abs(p))",
+      "largest_hermitian_part_eigenvalue": -1.0,
+      "recovery_threshold": 0.0,
+      "recovery_coordinate": 0.0234375,
+      "physical_state_relative_error_vs_carleman": 9.286200131696623e-07,
+      "lifted_state_relative_error_vs_matrix_exponential": 1.0502986435890824e-06,
+      "end_to_end_relative_error_vs_analytical": 9.286200132983725e-07,
+      "component_relative_error_vs_analytical": {
+        "x": 8.803001170250783e-07,
+        "y": 1.3831869738057297e-06,
+        "z": 1.1632693959372288e-06
+      },
+      "selected_outcome_probability": 0.0010810907315425896,
+      "accepted_region_probability": 0.023608013829421362,
+      "generator_decomposition_error": 0.0,
+      "hamiltonian_hermiticity_error": 0.0,
+      "relative_enlarged_norm_drift": 7.434944140070527e-15
+    }
+  }
+}
